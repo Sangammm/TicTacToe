@@ -5,7 +5,7 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    const div = {
+    const divdesign = {
       margin: "100px",
       width: "300px",
       height: "300px"
@@ -22,9 +22,8 @@ class App extends Component {
       if (id === 2) return O;
       else return;
     };
-
     return (
-      <div style={div}>
+      <div>
         <Row>
           <Col span={8}>
             <div onClick={() => updatetictac(1)}>
@@ -32,37 +31,55 @@ class App extends Component {
             </div>
           </Col>
           <Col span={8}>
-            <div onClick={() => updatetictac(2)}>{tictac[1] === 1 ? X : O}</div>
+            <div onClick={() => updatetictac(2)}>
+              <Show id="1" />
+            </div>
           </Col>
           <Col span={8}>
-            <div onClick={() => updatetictac(3)}>{tictac[1] === 1 ? X : O}</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8}>
-            <div onClick={() => updatetictac(4)}>{tictac[1] === 1 ? X : O}</div>
-          </Col>
-          <Col span={8}>
-            <div onClick={() => updatetictac(5)}>{tictac[1] === 1 ? X : O}</div>
-          </Col>
-          <Col span={8}>
-            <div onClick={() => updatetictac(6)}>{tictac[1] === 1 ? X : O}</div>
+            <div onClick={() => updatetictac(3)}>
+              <Show id="1" />
+            </div>
           </Col>
         </Row>
         <Row>
           <Col span={8}>
-            <div onClick={() => updatetictac(7)}>{tictac[1] === 1 ? X : O}</div>
+            <div onClick={() => updatetictac(4)}>
+              <Show id="1" />
+            </div>
           </Col>
           <Col span={8}>
-            <div onClick={() => updatetictac(8)}>{tictac[1] === 1 ? X : O}</div>
+            <div onClick={() => updatetictac(5)}>
+              <Show id="1" />
+            </div>
           </Col>
           <Col span={8}>
-            <div onClick={() => updatetictac(9)}>{tictac[1] === 1 ? X : O}</div>
+            <div onClick={() => updatetictac(6)}>
+              <Show id="1" />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={8}>
+            <div onClick={() => updatetictac(7)}>
+              <Show id="1" />
+            </div>
+          </Col>
+          <Col span={8}>
+            <div onClick={() => updatetictac(8)}>
+              <Show id="1" />
+            </div>
+          </Col>
+          <Col span={8}>
+            <div onClick={() => updatetictac(9)}>
+              <Show id="1" />
+            </div>
           </Col>
         </Row>
       </div>
     );
   }
 }
+
+class App extends Component {}
 
 export default inject("store")(observer(App));
