@@ -35,7 +35,7 @@ class App extends Component {
     } = this.props.store;
     return (
       <div id="container" style={divdesign}>
-        <h1>{gamestatus ? gamestatus : ""}</h1>
+        <h1>{gamestatus ? gamestatus : `turn = ${users[turn - 1]}`}</h1>
         <Row>
           <Col span={8}>
             <button disabled={game_ended} onClick={() => updatetictac(0)}>
