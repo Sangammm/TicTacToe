@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
+import { Button } from "antd";
+import "antd/dist/antd.css";
+import "./App.css";
+
 import { observer, inject } from "mobx-react";
 import "./App.css";
 class App extends Component {
   render() {
     const divdesign = {
-      margin: "100px",
       width: "300px",
-      height: "300px",
-      border: "1px solid black"
+      height: "300px"
     };
     const X = "X";
     const O = "O";
@@ -23,22 +25,33 @@ class App extends Component {
         return "";
       }
     };
-    const { tictac, turn, users, updatetictac } = this.props.store;
-    return (
-      <div style={this.divdesign}>
+    const {
+      tictac,
+      turn,
+      users,
+      updatetictac,
+      gamestatus,
+      game_ended
+    } = this.props.store;
+    return game_ended ? (
+      <div>
+        <h1>{gamestatus}</h1>
+      </div>
+    ) : (
+      <div id="container" style={divdesign}>
         <Row>
           <Col span={8}>
-            <button onClick={() => updatetictac(0)}>
+            <button type="danger" onClick={() => updatetictac(0)}>
               <Show id={tictac[0]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(1)}>
+            <button type="danger" onClick={() => updatetictac(1)}>
               <Show id={tictac[1]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(2)}>
+            <button type="danger" onClick={() => updatetictac(2)}>
               <Show id={tictac[2]} />
             </button>
           </Col>
