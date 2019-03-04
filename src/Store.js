@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { observable, action, decorate } from "mobx";
-import { timeout } from "q";
-import { Alert } from "antd";
 export default class Store extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +11,7 @@ export default class Store extends Component {
   }
 
   check = (one, two, three) => {
-    if (one != 0 && two != 0 && three != 0) {
+    if (one !== 0 && two !== 0 && three !== 0) {
       if (one === two) {
         if (two === three) {
           this.game_ended = true;
@@ -45,6 +43,13 @@ export default class Store extends Component {
       this.checkwon();
     }
   };
+
+  resetgame = () => {
+    this.turn = 1;
+    this.tictac = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    this.gamestatus = null;
+    this.game_ended = false;
+  };
 }
 
 decorate(Store, {
@@ -52,6 +57,6 @@ decorate(Store, {
   turn: observable,
   gamestatus: observable,
   game_ended: observable,
-  gamestatus: observable,
-  updatetictac: action
+  updatetictac: action,
+  resetgame: action
 });

@@ -1,4 +1,4 @@
-button {
+#container button {
   width: 98px;
   height: 98px;
   padding: 20px;
@@ -12,5 +12,9 @@ button {
   margin-top: 200px;
 }
 h1 {
+  margin: auto;
+}
+
+#reset {
   margin: auto;
 }

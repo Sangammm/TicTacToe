@@ -31,62 +31,70 @@ class App extends Component {
       users,
       updatetictac,
       gamestatus,
-      game_ended
+      game_ended,
+      resetgame
     } = this.props.store;
     return (
-      <div id="container" style={divdesign}>
-        <h1>{gamestatus ? gamestatus : `turn = ${users[turn - 1]}`}</h1>
-        <Row>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(0)}>
-              <Show id={tictac[0]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(1)}>
-              <Show id={tictac[1]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(2)}>
-              <Show id={tictac[2]} />
-            </button>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(3)}>
-              <Show id={tictac[3]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(4)}>
-              <Show id={tictac[4]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(5)}>
-              <Show id={tictac[5]} />
-            </button>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(6)}>
-              <Show id={tictac[6]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(7)}>
-              <Show id={tictac[7]} />
-            </button>
-          </Col>
-          <Col span={8}>
-            <button disabled={game_ended} onClick={() => updatetictac(8)}>
-              <Show id={tictac[8]} />
-            </button>
-          </Col>
-        </Row>
+      <div>
+        <div id="container" style={divdesign}>
+          <h1>{gamestatus ? gamestatus : `turn = ${users[turn - 1]}`}</h1>
+          <Row>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(0)}>
+                <Show id={tictac[0]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(1)}>
+                <Show id={tictac[1]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(2)}>
+                <Show id={tictac[2]} />
+              </button>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(3)}>
+                <Show id={tictac[3]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(4)}>
+                <Show id={tictac[4]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(5)}>
+                <Show id={tictac[5]} />
+              </button>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(6)}>
+                <Show id={tictac[6]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(7)}>
+                <Show id={tictac[7]} />
+              </button>
+            </Col>
+            <Col span={8}>
+              <button disabled={game_ended} onClick={() => updatetictac(8)}>
+                <Show id={tictac[8]} />
+              </button>
+            </Col>
+          </Row>
+        </div>
+        <div id="reset">
+          <Button id="reset" type="danger" onClick={() => resetgame()}>
+            Reset Game
+          </Button>
+        </div>
       </div>
     );
   }
