@@ -6,6 +6,7 @@ import "./App.css";
 
 import { observer, inject } from "mobx-react";
 import "./App.css";
+import { autorun } from "mobx";
 class App extends Component {
   render() {
     const divdesign = {
@@ -89,11 +90,24 @@ class App extends Component {
               </button>
             </Col>
           </Row>
-        </div>
-        <div id="reset">
-          <Button id="reset" type="danger" onClick={() => resetgame()}>
+          <button
+            style={{
+              marginLeft: "110px",
+              marginRight: "110px",
+              marginTop: "50px",
+              width: "80px",
+              background: "default",
+              height: "50px",
+              fontSize: "1em",
+              fontStyle: "bold",
+              padding: "2px",
+              background: "red",
+              color: "white"
+            }}
+            onClick={() => resetgame()}
+          >
             Reset Game
-          </Button>
+          </button>
         </div>
       </div>
     );
