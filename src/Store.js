@@ -15,7 +15,7 @@ export default class Store extends Component {
       if (one === two) {
         if (two === three) {
           this.game_ended = true;
-          this.gamestatus = this.users[this.turn - 1] + "- Has Won the Game";
+          this.gamestatus = this.users[this.turn - 1] + "- Won the Game";
         }
       }
     }
