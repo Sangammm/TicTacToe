@@ -13,12 +13,11 @@ export default class Store extends Component {
   }
 
   updatetictac = id => {
-    if (id === 0) {
+    if (this.tictac[id] === 0) {
       this.tictac[id] = this.turn;
       if (this.turn === 1) {
         this.turn = 2;
-      }
-      if (this.turn === 2) {
+      } else {
         this.turn = 1;
       }
     }
