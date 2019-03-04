@@ -33,59 +33,56 @@ class App extends Component {
       gamestatus,
       game_ended
     } = this.props.store;
-    return game_ended ? (
-      <div>
-        <h1>{gamestatus}</h1>
-      </div>
-    ) : (
+    return (
       <div id="container" style={divdesign}>
+        <h1>{gamestatus ? gamestatus : ""}</h1>
         <Row>
           <Col span={8}>
-            <button type="danger" onClick={() => updatetictac(0)}>
+            <button disabled={game_ended} onClick={() => updatetictac(0)}>
               <Show id={tictac[0]} />
             </button>
           </Col>
           <Col span={8}>
-            <button type="danger" onClick={() => updatetictac(1)}>
+            <button disabled={game_ended} onClick={() => updatetictac(1)}>
               <Show id={tictac[1]} />
             </button>
           </Col>
           <Col span={8}>
-            <button type="danger" onClick={() => updatetictac(2)}>
+            <button disabled={game_ended} onClick={() => updatetictac(2)}>
               <Show id={tictac[2]} />
             </button>
           </Col>
         </Row>
         <Row>
           <Col span={8}>
-            <button onClick={() => updatetictac(3)}>
+            <button disabled={game_ended} onClick={() => updatetictac(3)}>
               <Show id={tictac[3]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(4)}>
+            <button disabled={game_ended} onClick={() => updatetictac(4)}>
               <Show id={tictac[4]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(5)}>
+            <button disabled={game_ended} onClick={() => updatetictac(5)}>
               <Show id={tictac[5]} />
             </button>
           </Col>
         </Row>
         <Row>
           <Col span={8}>
-            <button onClick={() => updatetictac(6)}>
+            <button disabled={game_ended} onClick={() => updatetictac(6)}>
               <Show id={tictac[6]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(7)}>
+            <button disabled={game_ended} onClick={() => updatetictac(7)}>
               <Show id={tictac[7]} />
             </button>
           </Col>
           <Col span={8}>
-            <button onClick={() => updatetictac(8)}>
+            <button disabled={game_ended} onClick={() => updatetictac(8)}>
               <Show id={tictac[8]} />
             </button>
           </Col>
