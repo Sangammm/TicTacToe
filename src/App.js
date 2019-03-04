@@ -13,6 +13,19 @@ class App extends Component {
       width: "300px",
       height: "300px"
     };
+    const reset = {
+      marginLeft: "110px",
+      marginRight: "110px",
+      marginTop: "50px",
+      width: "80px",
+      background: "default",
+      height: "50px",
+      fontSize: "1em",
+      fontStyle: "bold",
+      padding: "2px",
+      background: "red",
+      color: "white"
+    };
     const X = "X";
     const O = "O";
     const Show = props => {
@@ -90,22 +103,7 @@ class App extends Component {
               </button>
             </Col>
           </Row>
-          <button
-            style={{
-              marginLeft: "110px",
-              marginRight: "110px",
-              marginTop: "50px",
-              width: "80px",
-              background: "default",
-              height: "50px",
-              fontSize: "1em",
-              fontStyle: "bold",
-              padding: "2px",
-              background: "red",
-              color: "white"
-            }}
-            onClick={() => resetgame()}
-          >
+          <button style={reset} onClick={() => resetgame()}>
             Reset Game
           </button>
         </div>
